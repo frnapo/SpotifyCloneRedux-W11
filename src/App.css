@@ -3,12 +3,54 @@ body {
   background: linear-gradient(90deg, rgb(63, 86, 119) 0%, rgba(33, 44, 61, 1) 42%, rgb(15, 21, 29) 100%);
 }
 
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #282828;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #888;
+}
+
+::-webkit-scrollbar-corner {
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-track {
+  background-color: black;
+}
+
 .custom-button:hover {
   color: white;
   background-color: #1dd05e;
 }
 
-.sidebar .nav-link:hover {
+.sidebar-fixed {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  overflow-y: auto;
+  z-index: 1100;
+}
+
+.main-content {
+  margin-left: 250px;
+  margin-bottom: 100px;
+}
+
+@media (max-width: 991.98px) {
+  /* bk lg di bs le ho dovute gestire cosi, per via dei fixed dati alla sidebar e al bottomplayer */
+  .main-content {
+    margin-left: 0;
+  }
+}
+
+.nav-link:hover {
   color: white !important;
 }
 
@@ -26,8 +68,19 @@ body {
   border-bottom-left-radius: 0;
 }
 
-.custom-bottom-player {
+.custom-bottom-player-nav {
   background-color: #282828 !important;
+}
+
+.custom-bottom-player {
+  padding-left: 250px;
+}
+
+@media (max-width: 991.98px) {
+  /* bk lg di bs le ho dovute gestire cosi, per via dei fixed dati alla sidebar e al bottomplayer */
+  .custom-bottom-player {
+    padding-left: 0px;
+  }
 }
 
 .custom-player-buttons {

@@ -1,16 +1,19 @@
-import { Container, Row, Col, Nav } from "react-bootstrap";
+import { Container, Row, Col, Nav, Card } from "react-bootstrap";
 import Sidebar from "./Sidebar";
+import { useSelector } from "react-redux";
 import BottomPlayer from "./BottomPlayer";
 
 function MainComponent() {
+  const searchResults = useSelector((state) => state.search.results);
+
   return (
     <Container fluid className="main-container">
       <Row>
         <Sidebar />
-        <Col className="main-content d-none d-sm-block">
+        <Col className="main-content">
           <Row className="mb-4 mt-3">
             <Col>
-              <Nav className="justify-content-center">
+              <Nav className="justify-content-center d-none d-sm-flex">
                 <Nav.Item>
                   <Nav.Link href="#" className="main-links me-3">
                     TRENDING
@@ -41,7 +44,17 @@ function MainComponent() {
           </Row>
           {/* contenuto principale */}
           <Row>
-            <Col>{/* contenuto dinamico */}</Col>
+            {searchResults.map((track) => (
+              <Col xs={4} md={3} xl={2} key={track.id} className="mb-4">
+                <Card className="bg-transparent border-0 rounded-0">
+                  <Card.Img variant="top" src={track.album.cover_big} className="rounded-0" />
+                  <Card.Body>
+                    <Card.Title className="text-white">{track.title}</Card.Title>
+                    <Card.Subtitle className="mb-2 text-secondary">{track.artist.name}</Card.Subtitle>
+                  </Card.Body>
+                </Card>
+              </Col>
+            ))}
           </Row>
         </Col>
       </Row>

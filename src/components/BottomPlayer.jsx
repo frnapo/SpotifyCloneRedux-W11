@@ -3,8 +3,8 @@ import { PlayFill, Shuffle, SkipForwardFill, SkipBackwardFill, Repeat } from "re
 
 function BottomPlayer() {
   return (
-    <Navbar fixed="bottom" bg="dark" variant="dark" className="custom-bottom-player" style={{ minHeight: "100px" }}>
-      <Container className="d-flex flex-column align-items-center pt-2 pb-2" style={{ paddingInlineStart: "250px" }}>
+    <Navbar fixed="bottom" bg="dark" variant="dark" className="custom-bottom-player-nav" style={{ height: "100px" }}>
+      <Container className="d-flex flex-column align-items-center pt-2 pb-2 custom-bottom-player">
         {/* regolato in base alla width minima della nav */}
         <div className="d-flex justify-content-center mb-2">
           <Shuffle className="fs-4 custom-player-buttons mt-2 me-3" />
