@@ -72,13 +72,13 @@ body {
   background-color: #282828 !important;
 }
 
-.custom-bottom-player {
+.song-details {
   padding-left: 250px;
 }
 
 @media (max-width: 991.98px) {
   /* bk lg di bs le ho dovute gestire cosi, per via dei fixed dati alla sidebar e al bottomplayer */
-  .custom-bottom-player {
+  .song-details {
     padding-left: 0px;
   }
 }
@@ -95,7 +95,8 @@ body {
 .custom-progress-bar {
   background-color: #414141;
   height: 3px;
-  width: 350px !important;
+  min-width: 150px !important;
+  max-width: 400px !important;
 }
 
 .main-links {
@@ -110,4 +111,9 @@ body {
   text-decoration: none;
   opacity: 1;
   transition: 0.3s;
+}
+
+.card-track-details {
+  line-height: 13px;
+  font-size: 13px;
 }
