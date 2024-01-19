@@ -52,7 +52,7 @@ function MainComponent() {
           <Row>
             {searchResults.map((track) => (
               <Col xs={4} md={3} xl={2} key={track.id} className="mb-4">
-                <Card className="bg-transparent border-0 rounded-0" onClick={() => handleClick(track)}>
+                <Card className="bg-transparent border-0 rounded-0 card-hover" onClick={() => handleClick(track)}>
                   <Card.Img variant="top" src={track.album.cover_big} className="rounded-0" />
                   <Card.Body>
                     <Card.Title className="text-white">{track.title}</Card.Title>

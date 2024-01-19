@@ -95,8 +95,7 @@ body {
 .custom-progress-bar {
   background-color: #414141;
   height: 3px;
-  min-width: 150px !important;
-  max-width: 400px !important;
+  width: 250px !important;
 }
 
 .main-links {
@@ -116,4 +115,20 @@ body {
 .card-track-details {
   line-height: 13px;
   font-size: 13px;
+}
+
+.card-hover {
+  cursor: pointer;
+}
+
+.card-hover:hover {
+  background-color: rgba(0, 0, 0, 0.5) !important;
+  transform: scale(1.05);
+  transition: background-color 0.3s ease-in-out;
+  transition: transform 0.1s ease-in-out;
+}
+
+.track-duration {
+  font-size: 13px;
+  margin-top: -5px;
 }

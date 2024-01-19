@@ -3,11 +3,16 @@ import { PlayFill, Shuffle, SkipForwardFill, SkipBackwardFill, Repeat } from "re
 import { useSelector } from "react-redux";
 
 function BottomPlayer() {
+  function formatTrackDuration(durationInSeconds) {
+    const minutes = Math.floor(durationInSeconds / 60);
+    const seconds = durationInSeconds % 60;
+    return `${minutes}:${seconds.toString().padStart(2, "0")}`;
+  }
+
   const currentTrack = useSelector((state) => state.player.currentTrack);
   return (
     <Navbar fixed="bottom" bg="dark" variant="dark" className="custom-bottom-player-nav" style={{ height: "100px" }}>
       <div className="song-details">
-        {/* Dettagli della Canzone come Card */}
         {currentTrack && (
           <Card className="bg-transparent border-0">
             <Card.Body>
@@ -26,16 +31,22 @@ function BottomPlayer() {
         {/* regolato in base alla width minima della nav */}
 
         <div className="d-flex justify-content-center mb-2">
-          <Shuffle className="fs-4 custom-player-buttons mt-2 me-3" />
+          <Shuffle className="fs-4 custom-player-buttons mt-4 me-3" />
 
-          <SkipBackwardFill className="fs-4 custom-player-buttons mt-2" />
+          <SkipBackwardFill className="fs-4 custom-player-buttons mt-4" />
 
-          <PlayFill className="fs-1 custom-player-buttons mx-3" />
+          <PlayFill className="fs-1 custom-player-buttons mx-3 mt-3" />
 
-          <SkipForwardFill className="fs-4 custom-player-buttons mt-2" />
-          <Repeat className="fs-4 custom-player-buttons mt-2 ms-3" />
+          <SkipForwardFill className="fs-4 custom-player-buttons mt-4" />
+          <Repeat className="fs-4 custom-player-buttons mt-4 ms-3" />
         </div>
-        <ProgressBar now={0} className="w-100 custom-progress-bar" />
+        <div className="d-flex">
+          {currentTrack && <p className="text-secondary me-3 track-duration">0:00</p>}
+          <ProgressBar now={0} className="w-100 custom-progress-bar mt-1" />
+          {currentTrack && (
+            <p className="text-secondary ms-3 track-duration">{formatTrackDuration(currentTrack.duration)}</p>
+          )}
+        </div>
       </Container>
     </Navbar>
   );
