@@ -51,7 +51,7 @@ const Sidebar = () => {
             Sign Up
           </Button>
           <button type="button" className="btn btn-outline-light w-100 rounded-5 my-2">
-            {/* non funzionava la variant outline-white qua, ho duvuto usare un button con classi normali */}
+            {/* non funzionava la variant outline-white qua, ho dovuto usare un button con classi normali */}
             Login
           </button>
           <p className="mt-2 text-secondary">

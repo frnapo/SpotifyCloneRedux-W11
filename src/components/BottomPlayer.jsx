@@ -30,15 +30,15 @@ function BottomPlayer() {
       <Container className="d-flex flex-column align-items-center pt-2 pb-2 custom-bottom-player">
         {/* regolato in base alla width minima della nav */}
 
-        <div className="d-flex justify-content-center mb-2">
-          <Shuffle className="fs-4 custom-player-buttons mt-4 me-3" />
+        <div className={`d-flex justify-content-center mb-2 ${currentTrack ? "mt-4" : ""}`}>
+          <Shuffle className="fs-4 custom-player-buttons mt-2 me-3" />
 
-          <SkipBackwardFill className="fs-4 custom-player-buttons mt-4" />
+          <SkipBackwardFill className="fs-4 custom-player-buttons mt-2" />
 
-          <PlayFill className="fs-1 custom-player-buttons mx-3 mt-3" />
+          <PlayFill className="fs-1 custom-player-buttons mx-3" />
 
-          <SkipForwardFill className="fs-4 custom-player-buttons mt-4" />
-          <Repeat className="fs-4 custom-player-buttons mt-4 ms-3" />
+          <SkipForwardFill className="fs-4 custom-player-buttons mt-2" />
+          <Repeat className="fs-4 custom-player-buttons mt-2 ms-3" />
         </div>
         <div className="d-flex">
           {currentTrack && <p className="text-secondary me-3 track-duration">0:00</p>}
